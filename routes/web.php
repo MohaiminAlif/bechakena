@@ -13,7 +13,6 @@ Route::get('/vendor_pending/{$vID}','App\Http\Controllers\VendorController@vendo
 Route::post('/vendor_data_review', 'App\Http\Controllers\VendorController@vendor_data_review')->name('vendor_data_review');
 Route::get('/pending_msg', 'App\Http\Controllers\VendorController@pending_msg')->name('pending_msg');
 
-
 Route::get('/product_list' , 'App\Http\Controllers\VendorController@product_list')->name('product_list')->middleware('check_vendor_role');
 
 Route::get('/product_upoad_page' , 'App\Http\Controllers\VendorController@upload')->name('upload')->middleware('check_vendor_role');
