@@ -1,0 +1,69 @@
+.display-image {
+    width: 400px;
+    height: 600px;
+}
+
+.middle-section {
+    margin-bottom: 100px
+}
+
+.main-part {
+    background-color: rgb(227, 235, 235);
+    padding: 50px 80px 100px 80px;
+}
+
+.img-nav {
+    height: 60px;
+    width: 60px;
+}
+
+.button {
+    background-color: rgb(227, 235, 235);
+}
+
+.button:hover {
+    border-color: #ecd472;
+    transition: .5s;
+}
+
+.img {
+    background-image: url(images/product/orange/orange00.jpg);
+}
+
+.searchBar {
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+}
+
+.regSection {
+    margin-top: 20px;
+    float: right;
+}
+
+.headSection {
+    background-color: rgb(28, 28, 92);
+    font-size: x-small;
+    padding: 0px 10px 0px 10px;
+    color: azure;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a.logo {
+    color: azure;
+}
+
+a:hover.logo {
+    color: azure;
+}
+
+.navText {
+    color: rgb(28, 28, 92);
+}
