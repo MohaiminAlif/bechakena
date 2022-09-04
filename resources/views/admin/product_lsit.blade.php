@@ -37,9 +37,6 @@
 
     <div class="col-9">
 
-    
-   
-    
         <div>
             <div class="row">
                 <div class="">

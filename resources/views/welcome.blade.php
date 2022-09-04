@@ -166,7 +166,7 @@
                         <h5 class="card-title text-center py-3">Television</h5>
                         <img src="{{ asset ('assets/img/p8.jpg')}}" class="card-img-top" alt="TV">
                         <div class="card-body text-center">
-                            <a href="{{ url('products/tv')}}" class="link-dark text-decoration-none ">See More...</a>
+                            <a href="   " class="link-dark text-decoration-none ">See More...</a>
                         </div>
 
                     </div>
