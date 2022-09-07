@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="{{ asset ('assets/css/button_style.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/css/product.css')}}">
 
+    <link rel="stylesheet" href="{{ asset ('assets/css/video.popup.css')}}"> 
+    <link rel="stylesheet" href="{{ asset ('assets/css/img_slider.css')}}"> 
+    <link rel="stylesheet" href="{{ asset ('assets/css//productViewStyle.css')}}"> 
  
 </head>
 
@@ -73,7 +76,7 @@
                 </div>
         </header>
 
-        <main class="py-4">
+        <main style="margin-top:52px;">
             @yield('public_content')
         </main>
     </div>
@@ -162,16 +165,16 @@
                 <div class="modal-body">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="myform bg-dark">
-                        <h1 class="text-center">Login Form</h1>
+                        <h1 class="text-center" style="color:white;">Login Form</h1>
                         <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="mb-3 mt-4">
-                            <label for="email" class="col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-form-label text-md-end" style="color:white;">{{ __('Email Address') }}</label>
 
  
                                 
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input id="email" style="color:white;" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -182,7 +185,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="password" class="col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-form-label text-md-end" style="color:white;">{{ __('Password') }}</label>
 
                            
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -207,7 +210,7 @@
                             <div class="col-6">
 
                             @if (Route::has('password.request'))
-                                    <a style="font-size:smaller;" class="" href="{{ route('password.request') }}">Forgot Your Password?</a>
+                                    <a style="font-size:smaller;color:white;" class="" href="{{ route('password.request') }}">Forgot Your Password?</a>
                                     @endif
                             </div>
 
@@ -244,18 +247,6 @@
     </script>
 
 
-    <!-- separate carousel controll -->
-    <script>
-        var myCarousel = document.querySelector('#banner-slider');
-        var carousel = new bootstrap.Carousel(myCarousel);
-
-        var myCarousel1 = document.querySelector('#productSliderOne');
-        var carousel = new bootstrap.Carousel(myCarousel1);
-    </script>
-
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
 

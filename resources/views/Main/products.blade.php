@@ -7,11 +7,7 @@
     <div class="col-9">
         <section style="margin-top: 100px;" class="row mb-5">
 
-
             @forelse($datas as $data)
-
-
-
             <div class="mt-5 rounded" style="width: 350px;">
                 <div class="card card-product">
                     <div class="card-body">
