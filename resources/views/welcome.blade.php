@@ -1,4 +1,6 @@
-@extends('public_master') @section('public_content')
+@extends('public_master') @section('public_title') Bechakena @endsection 
+
+@section('public_content')
 
 <div class="container-fluid px-0">
 
