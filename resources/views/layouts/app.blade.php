@@ -151,6 +151,17 @@
             @yield('content')
         </main>
     </div>
+
+    <!-- Footer  -->
+    <div class="container-fluid border-top theme-bg">
+            <footer class="px-4">
+                <div class="d-flex justify-content-center  border-top">
+                    <p class="text-center">&copy; 2022 Developed by CODETREE</p>
+
+                </div>
+            </footer>
+        </div>
+    <!-- Footer End -->
     
     <script src="https://kit.fontawesome.com/ca76eb4afc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

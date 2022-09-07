@@ -156,7 +156,7 @@
                 </div>
             </footer>
         </div>
-        <!-- Footer End -->
+    <!-- Footer End -->
 
         <!-- Modal -->
     <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
