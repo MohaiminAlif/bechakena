@@ -7959,7 +7959,7 @@ div.zoom img {
 }
 
 @media (prefers-reduced-motion:no-preference) {
-    :root {
+     :root {
         scroll-behavior: smooth
     }
 }
@@ -14890,6 +14890,8 @@ fieldset:disabled .btn {
     padding: var(--bs-toast-padding-x)
 }
 
+
+/*
 .modal {
     --bs-modal-zindex: 1055;
     --bs-modal-width: 500px;
@@ -15202,6 +15204,7 @@ fieldset:disabled .btn {
         overflow-y: auto
     }
 }
+*/
 
 .tooltip {
     --bs-tooltip-zindex: 1080;

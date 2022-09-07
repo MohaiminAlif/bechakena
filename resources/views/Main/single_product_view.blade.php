@@ -48,11 +48,17 @@
                     </div>
 
                     <div class="col-3">
-                                <div class="card-body ">
-                                <h5 class="card-title">Product Description</h5>
-                                <h6 class="card-text ">{{$product->description}}</h6>
+
+                        <div class="card-body ">
+                            <h5 class="card-title">Product Description</h5>
+                            <div style="color:black">
+                                <?php
+                                    echo "$product->description";
+                                ?>
                             </div>
                     </div>
+                    </div>
+
                 </div>
 
 

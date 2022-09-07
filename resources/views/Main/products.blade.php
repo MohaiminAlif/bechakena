@@ -2,7 +2,22 @@
 
 <div class="row">
 
-    <div class="col-2"></div>
+    <div class="col-2" style="margin-top:100px; margin-left:15px;">
+
+        <form action="{{ route('filter_by_amount') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <label for="">Filter by amount</label><br>
+            <input type="radio" id="vehicle1" name="amount" onChange='submit();' value='1'>
+            <label for="vehicle1"> 0 - 2,000</label><br>
+            <input type="radio" id="vehicle1" name="amount" onChange='submit();' value="2">
+            <label for="vehicle1"> 2,001 - 10,000</label><br>
+            <input type="radio" id="vehicle2" name="amount" onChange='submit();' value="3">
+            <label for="vehicle2"> 10,001 - 15,000</label><br>
+            <input type="radio" id="vehicle3" name="amount" onChange='submit();' value="4">
+            <label for="vehicle3"> 15,000 - 50,000</label><br><br>
+        </form>
+
+    </div>
 
     <div class="col-9">
         <section style="margin-top: 100px;" class="row mb-5">

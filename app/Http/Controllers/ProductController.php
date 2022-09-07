@@ -22,4 +22,20 @@ class ProductController extends Controller
         $product = Products::findOrFail($id);
         return view('Main/single_product_view', compact('product'));
     }
+
+    public function filter_by_amount(Request $request)
+    {
+        
+        if($request->amount == "1"){
+
+            $datas = DB::table('products')
+                ->whereDate('price', '>=', 50)                                 
+                ->whereDate('price', '<', 20000)                                 
+                ->get();
+
+
+            return view('Main/products' , compact('datas'));
+            
+        }
+    }
 }

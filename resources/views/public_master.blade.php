@@ -82,7 +82,7 @@
     </div>
 
     <!-- Footer  -->
-            <div class="container-fluid  border-top theme-bg">
+            <div class="container-fluid  border-top theme-bg mt-5">
             <footer class="pt-5 px-4">
                 <div class="row">
                     <div class="col-2">

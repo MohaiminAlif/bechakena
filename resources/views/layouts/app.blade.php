@@ -147,7 +147,7 @@
         </div>
     </div>
 
-        <main class="py-4">
+        <main class="px-0 py-0">
             @yield('content')
         </main>
     </div>

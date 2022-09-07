@@ -6,9 +6,10 @@ Dashboard
 
 @section('content')
 
+    <div class="container mx-0 px-0">
     <div class="row">
 
-        <div class="col-2 userCategory">
+        <div class="col-3 userCategory" style="height: 100vh;">
 
             <div class="row mt-2">
                 <div class="col"><a href="{{route('home')}}"><button class="btn">Profile</button></a></div>
@@ -19,7 +20,7 @@ Dashboard
 
         </div>
 
-        <div class="col-9">
+        <div class="col-9 py-5">
                 @if(Session::has('message'))
                     <h4 class="text-center text-success">{{Session::get('message')}}</h4>
                     @endif
@@ -86,6 +87,6 @@ Dashboard
         </div>
 
     </div>
-
+    </div>
 
 @endsection

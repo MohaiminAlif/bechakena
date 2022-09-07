@@ -44,6 +44,7 @@ Route::get('/role_change_to_user/{id}', 'App\Http\Controllers\adminController@ro
 
 Route::get('/products/{category}', 'App\Http\Controllers\ProductController@get_category');
 Route::get('/single_product/{id}', 'App\Http\Controllers\ProductController@get_product');
+Route::post('/filter_by_amount', 'App\Http\Controllers\ProductController@filter_by_amount')->name('filter_by_amount');
 
 
 
