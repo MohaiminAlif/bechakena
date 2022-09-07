@@ -21,6 +21,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset ('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/css/profile_image.css')}}">
+    <link rel="stylesheet" href="{{ asset ('assets/css/button_style.css')}}">
 
 
 </head>
@@ -146,11 +147,11 @@
                 <div class="row">
                     <div class="col-3 userCategory" style="height: 100vh;">
 
-                        <div class="row mt-2">
-                            <div class="col"><a href="{{route('home')}}"><button class="btn">Profile</button></a></div>
+                        <div class="row">
+                            <div class="col"><a href="{{route('home')}}"><button class="addButton">Profile</button></a></div>
                         </div>
-                        <div class="row mt-2">
-                            <div class="col"><a href="{{route('vendor')}}"><button class="btn">Vendor</button></a></div>
+                        <div class="row">
+                            <div class="col"><a href="{{route('vendor')}}"><button class="addButton">Vendor</button></a></div>
                         </div>
 
                     </div>
