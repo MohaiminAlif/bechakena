@@ -44,7 +44,7 @@
                                     <tr class="alert" role="alert">
                                         <td>{{ $product->id }}</td>
                                         <td>
-                                            
+                                        <img  style="width: 100px; height: 100px;" src="{{url(asset ('Image/'.$product->img))}}" alt="{{$product->name}}" class="mb-3 img-fluid">
                                         </td>
                                         <td>
                                             <div>
@@ -57,7 +57,7 @@
                                             {{$product->category}}
                                         </td>
                                         <td>
-                                        <?php echo "$product->description";?>
+                                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#des">Description</button> 
                                         </td>
                                         <td><button type="button" class="btn btn-outline-info">Edit</button></td>
                                         <td>
@@ -83,8 +83,14 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-</body>
+        <!-- Modal -->
+        <div class="modal fade" id="des" tabindex="-1" aria-labelledby="des" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div style="color:aliceblue"><?php echo "$product->description";?></div>
+                    
+            </div>
+        </div>
 
-</html>
+    
 
 @endsection
