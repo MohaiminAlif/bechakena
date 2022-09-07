@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\Orders;
+use App\Models\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\ViewErrorBag;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -44,5 +46,29 @@ class HomeController extends Controller
             return view('home', compact('data'));
         }
         
+    }
+
+    public function reset(Request $request){
+
+        $token = $request->_token;
+        $id = $request->id;
+
+        return view('auth/passwords/reset', compact('token', 'id'));
+    }
+
+    public function update(Request $request){
+
+        // dd($request);
+        $data = User::findOrFail($request->id);
+        
+        if($data->email == $request->email){
+
+            $data->password = Hash::make($request->password);
+
+            $data->update();
+            return view('/home', compact('data')); 
+
+        };
+            
     }
 }

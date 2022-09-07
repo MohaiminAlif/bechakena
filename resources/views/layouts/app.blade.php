@@ -64,10 +64,16 @@
                                         {{ __('Logout') }}
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Update Password') }}
+                                <a class="dropdown-item" href="{{ route('reset') }}" onclick="event.preventDefault();
+                                                     document.getElementById('re-pass').submit();">
+                                        {{ __('RP') }}
                                 </a>
+
+                                <form id="re-pass" action="{{ route('reset') }}" method="POST" class="d-none">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ Auth::user()->id }}">
+                                </form>
+                                
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
@@ -158,6 +164,7 @@
                         <div class="row">
                             <div class="col"><a href="{{route('vendor')}}"><button class="addButton">Vendor</button></a></div>
                         </div>
+
 
                     </div>
                     <div class="col-9 py-5">
