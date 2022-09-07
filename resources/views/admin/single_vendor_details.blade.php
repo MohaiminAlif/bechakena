@@ -57,13 +57,14 @@
 
 <div class="row mt-5">
   <div class="btn offset-4">
-    <button class="btn btn-secondary " onclick="window.print();return false;">Print</button></div>
+    <button class="btn btn-secondary " onclick="window.print();return false;">Print</button>
+  </div>
 
-</div>
+  </div>
 
 <div class="row mt-5">
-    <button class="btn"><a href="{{ url('vendor_role_change/'.$vData->id) }}" class="btn btn-danger btn-sm">approve</a></button>
-
+    <button class="btn"><a href="{{ url('vendor_role_change/'.$vData->id) }}" class="btn btn-primary btn-sm">approve</a></button>
+    <button class="btn"><a href="{{ url('delete_vendor/'.$vData->id) }}" class="btn btn-danger btn-sm">Delete Vendor</a></button>
 </div>
 
 

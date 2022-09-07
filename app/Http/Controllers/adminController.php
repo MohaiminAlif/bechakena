@@ -86,17 +86,12 @@ class adminController extends Controller
 
     public function role_change_back($id){
 
-        //dd($id);
-
         $vData = Vendors::findOrFail($id);
         $uData = User::findOrFail($vData->uID);
-        
-
-         
+ 
         $vData->status = "pending";
         $uData->role_id = "pending";
-        //$uData->vID = "Null";
-       
+              
         $uData -> save();
         $vData -> save();
         
@@ -110,6 +105,38 @@ class adminController extends Controller
         
 
         return view('admin/single_vendor_details', compact('vData' , 'uData'));
+    }
+
+    function delete($id){
+
+        $vData = Vendors::findOrFail($id);
+        $uData = User::findOrFail($vData->uID);
+
+        $uData->role_id = "User";
+
+
+        if (file_exists($vData->trade_licence))
+        {
+            dd($uData);
+            unlink($vData->trade_licence);
+        }
+        if ($vData->trade_licence!= NULL)
+        {
+            dd($uData);
+            unlink($vData->trade_licence);
+        }
+        
+        if (file_exists($vData->nid))
+        {
+            dd($uData);
+            unlink($vData->nid);
+        }
+
+        dd($id);
+        $uData -> save();
+        $vData->delete();
+        
+        return redirect()->back()->with('message','Student Info Deleted Successfully!');
     }
     
 

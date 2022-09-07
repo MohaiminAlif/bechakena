@@ -71,7 +71,7 @@
                                     <th>Phone</th>
                                     <th>City</th>
                                     <th>Zip</th>
-                                    <th>Role</th>
+                                    <th>Details</th>
                                     <th>&nbsp;</th>
                                 </tr>
                             </thead>
@@ -100,15 +100,14 @@
                                             {{$list->zip}}
                                         </td>
                                         <td >
-                                        <a href="{{ url('role_change_to_user/'.$list->id) }}" class="btn btn-primary btn-sm">{{$list->status}}</a>
-
+                                            <a href="{{ url('vendor_deatails/'.$list->id) }}" class="btn btn-warning btn-sm">Show more</a>
                                         </td>
                                     </tr>
                                     @endif
                                 @empty
                                 <tr>
                                     <td>
-                                        <h4 class="mt-2">Nothing is here!</h4>
+                                        <h4 class="mt-2">No Vendor in the List</h4>
                                     </td>
                                 </tr>
                             @endforelse

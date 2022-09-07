@@ -1,11 +1,11 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\VendorController;
 
 // Vendor Controller
 
-Route::get('/vendor_panel','App\Http\Controllers\VendorController@index')->name('vendor')->middleware('check_vendor_role');
+Route::get('/vendor_panel',[VendorController::class, 'index'])->name('vendor')->middleware('check_vendor_role');
 
 Route::get('/vendor_form','App\Http\Controllers\VendorController@vendor_form')->name('vendor_form');
 Route::post('/vendor_create','App\Http\Controllers\VendorController@create_vendor')->name('vendor_create');
@@ -33,7 +33,8 @@ Route::get('/users','App\Http\Controllers\adminController@user')->name('user_lis
 Route::get('/vendors','App\Http\Controllers\adminController@vendor')->name('vendor_list')->middleware('check_admin');
 Route::get('/vendor_pending_list','App\Http\Controllers\adminController@vendor_pending_list')->name('vendor_pending_list')->middleware('check_admin');
 Route::get('/products','App\Http\Controllers\adminController@product')->name('admin_product_list')->middleware('check_admin');
-Route::get('/vendor_role_change/{id}', 'App\Http\Controllers\adminController@role_change')->name('vendor_role_change')->middleware('check_admin');
+Route::get('/delete_vendor_application/{id}', 'App\Http\Controllers\adminController@delete')->name('delete_vendor_application')->middleware('check_admin');
+Route::get('/delete_vendor/{id}', 'App\Http\Controllers\adminController@delete')->name('delete_vendor')->middleware('check_admin');
 Route::get('/vendor_deatails/{id}', 'App\Http\Controllers\adminController@single_vendor_details')->name('single_vendor_details')->middleware('check_admin');
 Route::get('/role_change_to_user/{id}', 'App\Http\Controllers\adminController@role_change_back')->name('vendor_role_change')->middleware('check_admin');
 
