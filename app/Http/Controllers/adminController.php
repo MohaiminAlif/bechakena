@@ -117,22 +117,21 @@ class adminController extends Controller
 
         if (file_exists($vData->trade_licence))
         {
-            dd($uData);
+
             unlink($vData->trade_licence);
         }
-        if ($vData->trade_licence!= NULL)
-        {
-            dd($uData);
-            unlink($vData->trade_licence);
-        }
+        // if ($vData->trade_licence!= NULL)
+        // {
+
+        //     unlink($vData->trade_licence);
+        // }
         
         if (file_exists($vData->nid))
         {
-            dd($uData);
+
             unlink($vData->nid);
         }
 
-        dd($id);
         $uData -> save();
         $vData->delete();
         
