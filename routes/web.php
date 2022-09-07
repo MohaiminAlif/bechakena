@@ -34,6 +34,7 @@ Route::get('/vendors','App\Http\Controllers\adminController@vendor')->name('vend
 Route::get('/vendor_pending_list','App\Http\Controllers\adminController@vendor_pending_list')->name('vendor_pending_list')->middleware('check_admin');
 Route::get('/products','App\Http\Controllers\adminController@product')->name('admin_product_list')->middleware('check_admin');
 Route::get('/delete_vendor_application/{id}', 'App\Http\Controllers\adminController@delete')->name('delete_vendor_application')->middleware('check_admin');
+Route::get('/vendor_role_change/{id}', 'App\Http\Controllers\adminController@role_change')->name('vendor_role_change')->middleware('check_admin');
 Route::get('/delete_vendor/{id}', 'App\Http\Controllers\adminController@delete')->name('delete_vendor')->middleware('check_admin');
 Route::get('/vendor_deatails/{id}', 'App\Http\Controllers\adminController@single_vendor_details')->name('single_vendor_details')->middleware('check_admin');
 Route::get('/role_change_to_user/{id}', 'App\Http\Controllers\adminController@role_change_back')->name('vendor_role_change')->middleware('check_admin');
