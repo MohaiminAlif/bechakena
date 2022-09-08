@@ -48,7 +48,7 @@ class HomeController extends Controller
         
     }
 
-    public function reset(Request $request){
+    public function reset_pass(Request $request){
 
         $token = $request->_token;
         $id = $request->id;
@@ -56,9 +56,9 @@ class HomeController extends Controller
         return view('auth/passwords/reset', compact('token', 'id'));
     }
 
-    public function update(Request $request){
+    public function update_pass(Request $request){
 
-        // dd($request);
+
         $data = User::findOrFail($request->id);
         
         if($data->email == $request->email){

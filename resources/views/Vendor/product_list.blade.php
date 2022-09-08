@@ -18,6 +18,7 @@
     </div>
 
     <section>
+    @if($product_list != [])
         <div class="row">
             <div class="col-md-12">
 
@@ -78,6 +79,12 @@
                 </div>
             </div>
         </div>
+    @elseif($product_list == [])
+        <div class="text-center border shadow p-3 rounded">
+            <h5 class="text-warning">No Product to show</h5>
+        </div>
+    @endif
+
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -86,10 +93,12 @@
     <div class="modal fade" id="des" tabindex="-1" aria-labelledby="des" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div style="color:aliceblue">
-                <?php echo "$product->description";?>
+                
             </div>
 
         </div>
     </div>
+
+
 
 @endsection

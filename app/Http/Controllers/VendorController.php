@@ -51,6 +51,8 @@ class VendorController extends Controller
             }
         }
 
+        // dd($product_list);
+
         return view('Vendor/product_list', compact('product_list'));
 
     }
