@@ -22,7 +22,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset ('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/css/profile_image.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/css/button_style.css')}}">
 
 
 </head>

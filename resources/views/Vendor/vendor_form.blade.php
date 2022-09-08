@@ -4,10 +4,10 @@
 @section('content') 
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="justify-content-center">
+        <div class="col-12">
             <div class="card">
-                <div class="card-header">{{ __('Vendor Registration Form') }}</div>
+                <div class="card-header text-center">{{ __('Vendor Registration Form') }}</div>
 
                 <div class="card-body">
                     <form action="{{ route('vendor_create') }}" method="POST" enctype="multipart/form-data">
@@ -86,7 +86,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </div></div>
 
 @endsection
