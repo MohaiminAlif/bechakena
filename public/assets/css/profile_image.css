@@ -30,10 +30,3 @@
 .profile_img:hover .middle {
     opacity: 2;
 }
-
-.text {
-    background-color: #04aa8954;
-    color: white;
-    font-size: 16px;
-    /* padding: 16px 32px; */
-}

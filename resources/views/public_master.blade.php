@@ -21,8 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Custom Style CSS -->
     <link rel="stylesheet" href="{{ asset ('assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/css/button_style.css')}}">
-    <link rel="stylesheet" href="{{ asset ('assets/css/product.css')}}">
+    <link rel="stylesheet" href="{{ asset ('assets/css/master_product.css')}}">
 
     <link rel="stylesheet" href="{{ asset ('assets/css/video.popup.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/css/img_slider.css')}}">
@@ -67,7 +66,7 @@
                         @auth
                         <a href="{{ url('/home') }}" class=""><button class="btn-sm btn-warning">Home</button></a> @else
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#ModalForm">
+                        <button type="button" class="btn-sm btn-warning login-btn" data-bs-toggle="modal" data-bs-target="#ModalForm">
                             Log In
                         </button> 
                         @endauth
@@ -163,20 +162,17 @@
     <!-- Modal -->
     <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
+            <div class="modal-content login-content">
+                <div class="modal-body login-body">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="myform bg-dark">
-                        <h1 class="text-center" style="color:white;">Login Form</h1>
+                    <div class="myform login-myform bg-dark">
+                        <h1 class="text-center login-h1" style="color:white;">Login Form</h1>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
                             <div class="mb-3 mt-4">
                                 <label for="email" class="col-form-label text-md-end" style="color:white;">{{ __('Email Address') }}</label>
-
-
-
-                                <input id="email" style="color:white;" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> @error('email')
+                                <input id="email" type="email" class="form-control login-form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> @error('email')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span> @enderror
@@ -187,7 +183,7 @@
                                 <label for="password" class="col-form-label text-md-end" style="color:white;">{{ __('Password') }}</label>
 
 
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"> @error('password')
+                                <input id="password" type="password" class="form-control login-form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"> @error('password')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span> @enderror
@@ -206,7 +202,7 @@
                                 <div class="col-6">
 
                                     @if (Route::has('password.request'))
-                                    <a style="font-size:smaller;color:white;" class="" href="{{ route('password.request') }}">Forgot Your Password?</a> @endif
+                                    <a style="font-size:smaller; color:white;" class="login-a" href="{{ route('password.request') }}">Forgot Your Password?</a> @endif
                                 </div>
 
 
@@ -214,12 +210,12 @@
 
                             <div class="row mb-0">
                                 <div class="">
-                                    <button type="submit" class="btn btn-light mt-3">LOGIN</button>
+                                    <button type="submit" class="login-btn btn btn-light mt-3">LOGIN</button>
 
                                 </div>
                             </div>
                         </form>
-                        <p>Not a member? <a href="{{ route('register') }}">Signup now</a></p>
+                        <p class="login-p">Not a member? <a class="p-a" href="{{ route('register') }}">Signup now</a></p>
                     </div>
                 </div>
             </div>

@@ -58,16 +58,12 @@
                                     {{ Auth::user()->name }}
                                 </a>
 
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                </a>
+                                                     document.getElementById('logout-form').submit();">Logout</a>
 
                                 <a class="dropdown-item" href="{{ route('reset') }}" onclick="event.preventDefault();
-                                                     document.getElementById('re-pass').submit();">
-                                        {{ __('RP') }}
-                                </a>
+                                                     document.getElementById('re-pass').submit();">Change Password</a>
 
                                 <form id="re-pass" action="{{ route('reset') }}" method="POST" class="d-none">
                                     @csrf
@@ -100,9 +96,6 @@
 
                                 <div class="mb-3 mt-4">
                                     <label for="email" class="col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-
-
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

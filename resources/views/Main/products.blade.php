@@ -28,7 +28,7 @@
                     <div class="card-body">
 
                         <div class="text-center position-relative ">
-                            <div class=" position-absolute top-0 start-0">
+                            <div class="position-absolute top-0 start-0">
                                 <span class="badge bg-danger">{{$data->category}}</span>
                             </div>
                             <a href="{{ url('single_product/'.$data->id)}}"> <img  style="width: 150px; height: 200px;" src="{{url(asset ('Image/'.$data->img))}}" alt="{{$data->name}}" class="mb-3 img-fluid"></a>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="text-small mb-1"><a href="{{ url('products/'.$data->category)}}" class="text-decoration-none text-muted"><small>{{$data->category}}</small></a>
                         </div>
-                        <h2 class="fs-6"><a href="{{ url('single_product/'.$data->id)}}" class="text-inherit text-decoration-none">{{$data->name}}</a></h2>
+                        <h2 class="fs-6"><a href="{{ url('single_product/'.$data->id)}}" class="text-inherit text-decoration-none product-name">{{$data->name}}</a></h2>
                         <div>
 
                             <small class="text-warning"> <i class="bi bi-star-fill"></i>
@@ -53,7 +53,7 @@
                                 <!-- {for discount use only} -->
                             </div>
                             <div>
-                                <a href="#!" class="btn btn-primary btn-sm">
+                                <a href="#!" class="btn btn-sm add-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                                     <line x1="12" y1="5" x2="12" y2="19"></line>
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
