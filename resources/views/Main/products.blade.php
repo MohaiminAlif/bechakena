@@ -1,29 +1,29 @@
 @extends('public_master') @section('public_title') Product Page @endsection @section('public_content')
 
-<div class="row">
+<div class="row container">
 
-    <div class="col-2" style="margin-top:100px; margin-left:15px;">
+    <div class="col-2" style="margin-top:50px;">
 
         <form action="{{ route('filter_by_amount') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <label for="">Filter by amount</label><br>
-            <input type="radio" id="vehicle1" name="amount" onChange='submit();' value='1'>
-            <label for="vehicle1"> 0 - 2,000</label><br>
-            <input type="radio" id="vehicle1" name="amount" onChange='submit();' value="2">
-            <label for="vehicle1"> 2,001 - 10,000</label><br>
-            <input type="radio" id="vehicle2" name="amount" onChange='submit();' value="3">
-            <label for="vehicle2"> 10,001 - 15,000</label><br>
-            <input type="radio" id="vehicle3" name="amount" onChange='submit();' value="4">
-            <label for="vehicle3"> 15,000 - 50,000</label><br><br>
+            <label >Filter by Price</label><br>
+            <input type="radio" name="amount" onChange='submit();' value='1'>
+            <label >0 - 2,000</label><br>
+            <input type="radio" name="amount" onChange='submit();' value="2">
+            <label >2,001 - 10,000</label><br>
+            <input type="radio"name="amount" onChange='submit();' value="3">
+            <label > 10,001 - 20,000</label><br>
+            <input type="radio"name="amount" onChange='submit();' value="4">
+            <label > 20,001 - 50,000</label><br><br>
         </form>
 
     </div>
 
-    <div class="col-9">
-        <section style="margin-top: 100px;" class="row mb-5">
+    <div class="col-10 container">
+        <section class="row mb-5 mx-5 px-0">
 
             @forelse($datas as $data)
-            <div class="mt-5 rounded" style="width: 350px;">
+            <div class="mt-5 rounded" style="width: 300px;">
                 <div class="card card-product">
                     <div class="card-body">
 
@@ -49,8 +49,7 @@
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-3">
                             <div><span class="text-dark">Taka: {{$data->price}}</span>
-                                <!-- <span class="text-decoration-line-through text-muted">Taka: {{$data->price}}</span>-->
-                                <!-- {for discount use only} -->
+                                <!-- <span class="text-decoration-line-through text-muted">Taka: {{$data->price}}</span>--><!-- {for discount use only} -->                                
                             </div>
                             <div>
                                 <a href="#!" class="btn btn-sm add-btn">

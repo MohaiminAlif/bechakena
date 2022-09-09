@@ -29,13 +29,43 @@ class ProductController extends Controller
         if($request->amount == "1"){
 
             $datas = DB::table('products')
-                ->whereDate('price', '>=', 50)                                 
-                ->whereDate('price', '<', 20000)                                 
+                ->where('price', '>', 0)                                 
+                ->where('price', '<=', 2000)                                 
                 ->get();
-
 
             return view('Main/products' , compact('datas'));
             
         }
+        if($request->amount == "2"){
+
+            $datas = DB::table('products')
+                ->where('price', '>', 2000)                                 
+                ->where('price', '<=', 10000)                                 
+                ->get();
+
+            return view('Main/products' , compact('datas'));
+            
+        }
+        if($request->amount == "3"){
+
+            $datas = DB::table('products')
+                ->where('price', '>', 10000)                                 
+                ->where('price', '<=', 20000)                                 
+                ->get();
+
+            return view('Main/products' , compact('datas'));
+            
+        }
+        if($request->amount == "4"){
+
+            $datas = DB::table('products')
+                ->where('price', '>', 20000)                                 
+                ->where('price', '<=', 50000)                                 
+                ->get();
+
+            return view('Main/products' , compact('datas'));
+            
+        }
+        
     }
 }

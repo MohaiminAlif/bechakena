@@ -22,7 +22,6 @@
     <!-- Custom Style CSS -->
     <link rel="stylesheet" href="{{ asset ('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/css/master_product.css')}}">
-
     <link rel="stylesheet" href="{{ asset ('assets/css/video.popup.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/css/img_slider.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/css//productViewStyle.css')}}">
@@ -66,7 +65,7 @@
                         @auth
                         <a href="{{ url('/home') }}" class=""><button class="btn-sm btn-warning">Home</button></a> @else
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn-sm btn-warning login-btn" data-bs-toggle="modal" data-bs-target="#ModalForm">
+                        <button type="button" class="btn-sm btn-warning nav-login-btn" data-bs-toggle="modal" data-bs-target="#ModalForm">
                             Log In
                         </button> 
                         @endauth
@@ -77,9 +76,11 @@
             </div>
         </header>
 
-        <main style="margin-top:52px;">
+    </div>
+
+    
+    <div style="margin-top:52px;">
             @yield('public_content')
-        </main>
     </div>
 
     <!-- Footer  -->

@@ -1,62 +1,90 @@
-@extends('layouts.app') @section('title') Product List @endsection @section('content')
+@extends('admin.master') @section('admin_title') User List @endsection @section('admin_content')
 
-<h3 class="bg-orange text-white text-center py-3 rounded">Review Application</h3>
-<div class="container card mx-auto">
+<link rel="stylesheet" href="{{ asset ('assets/css/list_style.css')}}">
 
-    <div class="card-body">
-        {{-- @if(Session::has('message'))
-        <h4 class="text-center text-success">{{Session::get('message')}}</h4>
-        @endif --}}
-        <h5 class="text-center">Please confirm the given information is correct then click 'Okay' to confirm the registration.</h5>
 
-        <p class="text-center text-success"> You will get an confirmation mail of registered Beckhakena Vendor within 2-3 working days.</p>
+<div class="row my-2">
+    <div class="text-center">
+        <h2 class="heading-section">Users</h2>
     </div>
 
-    <div class="card-body mx-auto">
-        <form action="{{ route('vendor_data_review') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+</div>
 
-            <div class="form-group mb-3">
-                <label for="">Vendor Name</label>
-                <h5>{{$data->name}}</h5>
+
+<section>
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="table-wrap">
+                <table class="table">
+                    <thead class="thead-primary">
+                        <tr>
+                            <th>Vendor ID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>City</th>
+                            <th>Zip</th>
+                            <th>Doc</th>
+                            <th>Status</th>
+                            <th>Delete</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @forelse($lists as $list) @if($list->status == "pending")
+
+                        <tr class="alert" role="alert">
+                            <td>{{ $list->id }}</td>
+                            <td>
+                                {{$list->name}}
+                            </td>
+
+                            <td>
+                                {{$list->phone}}
+                            </td>
+
+
+                            <td>{{$list->address}}</td>
+
+                            <td>
+                                {{$list->city}}
+                            </td>
+                            <td>
+                                {{$list->zip}}
+                            </td>
+
+
+                            <td>
+                                <a href="{{url('Image/Vendor_Documents/'.$list->trade_licence)}}" data-lightbox="{{ $list->id }}" target="_blank"><img style="height:100px; width: 80px" src="{{url('Image/Vendor_Documents/'.$list->trade_licence)}}"></a>
+                            </td>
+
+                            <td>
+                                <a href="{{ url('vendor_deatails/'.$list->id) }}" class="btn btn-warning btn-sm">Show more</a>
+                            </td>
+
+                            <td>
+                                <a href="{{ url('delete_vendor_application/'.$list->id) }}" class="btn btn-danger btn-sm">delete</a>
+                            </td>
+
+                        </tr>
+                        @endif @empty
+                        <tr>
+                            <td>
+                                <h4 class="mt-2">No Vendors Applied</h4>
+                            </td>
+                        </tr>
+                        @endforelse
+
+                    </tbody>
+                </table>
             </div>
-
-            <div class="form-group mb-3">
-                <label for="">Vendor Address</label>
-                <h5>{{$data->address}}</h5>
-            </div>
-
-            <div class="form-group mb-3">
-                <label for="">Vendor Phone Number</label>
-                <h5>{{$data->phone}}</h5>
-            </div>
-
-            <div class="form-group mb-3">
-                <label for="">Vendor City</label>
-                <h5>{{$data->city}}</h5>
-            </div>
-
-            <div class="form-group mb-3">
-                <label for="">Zip</label>
-                <h5 name="zip" for='zip' id="zip">{{$data->zip}}</h5>
-            </div>
-
-            <input type="hidden" id="id" name="id" value="{{$data->id}}">
-
-            <div class="row">
-                <div class="col">
-                    <button type="submit" class="btn btn-primary">Okay</button>
-                </div>
-
-                <div class="col">
-                    <a href="#"><button class="btn btn-warning" type="button">Edit</button></a>
-                </div>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-</div>
-</div>
+</section>
+
+
 
 
 @endsection

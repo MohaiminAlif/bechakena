@@ -778,14 +778,13 @@ p {
     color: #21313c
 }
 
-.login-btn {
+.nav-login-btn {
     background-color: #F29023;
     color: white;
     transition: 1s;
-    /* box-shadow: 20px 20px 50px 15px grey; */
 }
 
-.login-btn:hover {
+.nav-login-btn:hover {
     background-color: white;
     color: #F29023;
     border-radius: 50%;
