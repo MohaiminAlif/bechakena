@@ -102,7 +102,7 @@
 
 
                     </div>
-                    <div class="col-9">
+                    <div class="col-9 mt-2">
                         @yield('admin_content')
                     </div>
                 </div>
@@ -111,7 +111,7 @@
     </div>
 
     <!-- Footer  -->
-    <div class="container-fluid border-top theme-bg">
+    <div class="container-fluid border-top theme-bg mt-5">
         <footer class="px-4">
             <div class="d-flex justify-content-center  border-top">
                 <p class="text-center">&copy; 2022 Developed by CODETREE</p>

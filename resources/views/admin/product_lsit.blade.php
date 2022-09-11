@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('admin.master') @section('admin_title') Product List @endsection 
 
-@section('content')
+@section('admin_content')
 
 <!DOCTYPE html>
 <html lang="en">

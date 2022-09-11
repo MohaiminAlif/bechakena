@@ -1,18 +1,15 @@
-@extends('layouts.app') @section('content')
+@extends('admin.master') @section('admin_title') Single Vendor @endsection 
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="{{ asset ('assets/css/style.css')}}">
+@section('admin_content')
 
-
-
-
-<div class="row container mb-5 offset-2">
-    <div class="col-4">
+<div class="container">
+<div class="row mb-5 mt-5 justify-content-center">
+    <div class="text-center">
         <img class="shadow border-lg" style="height: 200px; width:200px; border-radius:100%;" src="{{url(asset ('Image/Vendor_Documents/'.$vData->trade_licence))}}" alt="">
     </div>
     
-    <div class="col-4">
-    <table class="table table-borderless w-20 p-2">
+    <div class="col-4 mt-5">
+    <table class="table table-borderless w-10 p-2">
 
     <tbody>
 
@@ -43,34 +40,28 @@
 
 
 
-<div class="row container" style="margin-top: 100px; margin-left:200px">
-
-  <div class="col-4">
+  <div class="row mb-5 justify-content-center">
       <img class="shadow rounded" style="height: 200px; width: 300px;" src="{{url(asset ('Image/Vendor_Documents/'.$vData->nid))}}" alt="">
     </div>
 
-  <div class="col-6">
+  <div class="row justify-content-center">
       <img class="shadow rounded" style="height: 800px; width: 700px;" src="{{url(asset ('Image/Vendor_Documents/'.$vData->trade_licence))}}" alt="">
   </div>  
 
 </div>
 
-<div class="row mt-5">
-  <div class="btn offset-4">
-    <button class="btn btn-secondary " onclick="window.print();return false;">Print</button>
-  </div>
+<div class="row text-center mt-2">
+<div class="col-7">
+
+    <button class="btn addButton" onclick="window.print();return false;">Print</button>
+
 
   </div>
 
-<div class="row mt-5">
-    <button class="btn"><a href="{{ url('vendor_role_change/'.$vData->id) }}" class="btn btn-primary btn-sm">approve</a></button>
-    <button class="btn"><a href="{{ url('delete_vendor/'.$vData->id) }}" class="btn btn-danger btn-sm">Delete Vendor</a></button>
+<div class="col-2">
+    <a href="{{ url('delete_vendor/'.$vData->id) }}"><button class="deleteButton">Delete Vendor</button></a>
 </div>
 
+</div>
 
-
-
-
-<script src="https://kit.fontawesome.com/ca76eb4afc.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 @endsection
