@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset ('assets/css/lightbox.min.css')}}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset ('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset ('assets/css/header_style.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/css/profile_image.css')}}">
 </head>
 
@@ -85,7 +86,7 @@
         <main class="px-0 py-0">
             <div class="container mx-0 px-0">
                 <div class="row">
-                    <div class="col-3 userCategory" style="height: 100vh;">
+                    <div class="col-3 left-nav" style="height: 100vh;">
 
                         <div class="row mt-2">
                             <div class="col"><a href="{{route('admin_profile')}}"><button class="addButton">Profile</button></a></div>

@@ -9,8 +9,6 @@
     <div class="row">
         <div class="col-md-8 offset-1">
             <div>
-
-
                 <div>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">

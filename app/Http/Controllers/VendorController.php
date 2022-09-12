@@ -206,11 +206,6 @@ class VendorController extends Controller
     }
 
 
-    // function vendor_pending(){
-    //     return view('Vendor/review_page');
-    // }
-
-
     public function vendor_data_review(Request $request)
     {
         $vendor = Vendors::findOrFail($request->id);

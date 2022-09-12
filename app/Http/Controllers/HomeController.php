@@ -32,7 +32,7 @@ class HomeController extends Controller
         $data = auth()->user();
 
         if($data->role_id == 'Admin'){
-            
+        
             return view('admin/profile', compact('data'));
         }
         else{

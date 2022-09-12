@@ -28,6 +28,7 @@ Route::post('/insert_size', 'App\Http\Controllers\VendorController@insert_size')
 
 //Admin Controllers starts
 
+Route::post('/admin_register','App\Http\Controllers\adminController@admin_registration')->name('admin_registration')->middleware('check_admin');
 Route::get('/admin_profile','App\Http\Controllers\adminController@index')->name('admin_profile')->middleware('check_admin');
 Route::get('/users','App\Http\Controllers\adminController@user')->name('user_list')->middleware('check_admin');
 Route::get('/vendors','App\Http\Controllers\adminController@vendor')->name('vendor_list')->middleware('check_admin');

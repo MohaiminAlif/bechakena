@@ -20,6 +20,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset ('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset ('assets/css/header_style.css')}}">
     <link rel="stylesheet" href="{{ asset ('assets/css/profile_image.css')}}">
 
 
@@ -84,7 +85,7 @@
         <main class="px-0 py-0">
             <div class="container mx-0 px-0">
                 <div class="row">
-                    <div class="col-3 userCategory" style="height: 100vh;">
+                    <div class="col-3 left-nav" style="height: 100vh;">
 
                         <div class="row">
                             <div class="col"><a href="{{route('home')}}"><button class="addButton">Profile</button></a></div>

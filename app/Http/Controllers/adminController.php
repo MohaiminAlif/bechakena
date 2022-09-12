@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 use App\Models\Products;
 use App\Models\Vendors;
 use App\Models\User;
@@ -24,7 +24,8 @@ class adminController extends Controller
     */
    public function index()
    {
-       return view('admin/profile');
+        $data = auth()->user();
+       return view('admin/profile', compact('data'));
    }
 
 
@@ -120,11 +121,6 @@ class adminController extends Controller
 
             unlink($vData->trade_licence);
         }
-        // if ($vData->trade_licence!= NULL)
-        // {
-
-        //     unlink($vData->trade_licence);
-        // }
         
         if (file_exists($vData->nid))
         {
@@ -136,6 +132,23 @@ class adminController extends Controller
         $vData->delete();
         
         return redirect()->back()->with('message','Student Info Deleted Successfully!');
+    }
+
+    protected function admin_registration(Request $request){
+
+        $user = new User();
+        $user['name']         =    $request->name;
+        $user['email']        =    $request->email;
+        $user['password']     =    Hash::make($request['password']);
+        $user['phone']        =    $request->phone;
+        $user['address']      =    $request->address;
+        $user['city']         =    $request->city;
+        $user['zip']          =    $request->zip;
+        $user['role_id']       =    'Admin';
+
+        $user->save();
+        
+        return redirect()->back()->with('message','Admin Added Successfully!');
     }
     
 

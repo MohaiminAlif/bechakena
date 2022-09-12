@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+.bg-orange {
+    background-color: #f38f24;
+}
+
+.logo img {
+    width: 80%;
+}
+
+#resizing_select {
+    width: 50px;
+}
+
+#width_tmp_select {
+    display: none;
+}
+
+.header-color,
+.header-color select,
+.header-color input,
+.header-color span {
+    /* From https://css.glass */
+    background: rgba(255, 249, 249, 0.21);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    border: 1px solid rgba(255, 249, 249, 0.3);
+}
+
+.header-color select,
+.header-color span {
+    border-radius: 10px;
+}
+
+.slider-img {
+    height: 75vh;
+    /* object-fit: 100%; */
+}
+
+.overlapping {
+    position: relative;
+}
+
+.overlapped-card-section {
+    position: absolute;
+    transform: translate(0px, -150px);
+}
+
+.shadow-one {
+    box-shadow: rgb(100 100 111 / 28%) 0px 7px 29px 0px;
+}
+
+.product-slider-one {
+    margin-top: 300px;
+}
+
+.product-slider-one img,
+.product-slider-two img {
+    height: 250px;
+    width: 90%;
+    object-fit: contain;
+    /* padding-right: 20px; */
+    /* border: 2px solid black; */
+}
+
+.slide-control {
+    font-size: 2.5rem;
+    color: #000;
+}
+
+.theme-bg {
+    background-color: #faa62b;
+    color: #fff;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 400px;
+    }
+    .modal-dialog .modal-content {
+        padding: 0rem;
+    }
+}
+
+.form-title {
+    margin: -2rem 0rem 2rem;
+}
+
+.regBody {
+    padding: 50px 200px 20px 200px;
+    margin-right: 1000px;
+}
