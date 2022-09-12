@@ -51,9 +51,9 @@ class HomeController extends Controller
     public function reset_pass(Request $request){
 
         $token = $request->_token;
-        $id = $request->id;
+        $data = auth()->user();
 
-        return view('auth/passwords/reset', compact('token', 'id'));
+        return view('auth/passwords/reset', compact('token', 'data'));
     }
 
     public function update_pass(Request $request){
