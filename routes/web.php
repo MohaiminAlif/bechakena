@@ -7,15 +7,15 @@ use App\Http\Controllers\VendorController;
 
 Route::get('/vendor_panel',[VendorController::class, 'index'])->name('vendor')->middleware('check_vendor_role');
 
-Route::get('/vendor_form','App\Http\Controllers\VendorController@vendor_form')->name('vendor_form');
-Route::post('/vendor_create','App\Http\Controllers\VendorController@create_vendor')->name('vendor_create');
+Route::get('/vendor_form',[VendorController::class, 'vendor_form'])->name('vendor_form');
+Route::post('/vendor_create',[VendorController::class, 'create_vendor'])->name('vendor_create');
 Route::get('/vendor_pending/{$vID}','App\Http\Controllers\VendorController@vendor_pending')->name('vendor_pending');
 Route::post('/vendor_data_review', 'App\Http\Controllers\VendorController@vendor_data_review')->name('vendor_data_review');
 Route::get('/pending_msg', 'App\Http\Controllers\VendorController@pending_msg')->name('pending_msg');
 
 Route::get('/product_list' , 'App\Http\Controllers\VendorController@product_list')->name('product_list')->middleware('check_vendor_role');
 
-Route::get('/product_upoad_page' , 'App\Http\Controllers\VendorController@upload')->name('upload')->middleware('check_vendor_role');
+Route::get('/product_upoad_page' ,[VendorController::class, 'upload'])->name('upload')->middleware('check_vendor_role');
 Route::post('/insert_product', 'App\Http\Controllers\VendorController@insert_product')->name('insert_product')->middleware('check_vendor_role');
 Route::get('/preview_page','App\Http\Controllers\VendorController@preview')->name('product_preview')->middleware('check_vendor_role');
 
