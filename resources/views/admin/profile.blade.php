@@ -1,15 +1,12 @@
 @extends('admin.master') @section('admin_title') Admin Dashboard @endsection @section('admin_content')
 
 <style>
-    form {
+    .admin-form {
         padding: 30px 0px 10px 0px;
         border: 1px solid rgba(192, 190, 190, 0.645);
         background: #fff;
         display: none;
         transition: 5s;
-    }
-    html {
-        scroll-behavior: smooth;
     }
 
 </style>
@@ -22,15 +19,38 @@
 
     </div>
     <div class="container">
-        <div class="row mt-3">
+        <div class="row mt-5">
             <div class="text-center profile_img">
-                <img class="shadow border-lg" style="height: 200px; width:200px; border-radius:100%;" src="{{ asset ('assets/img/default_user.png')}}">
+            @if($data->image == NULL)
+            <form action="{{ route('pic_update') }}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="middle">
-                    <a href="">
-                        <div class="text-primary">Change Picture?</div>
-                    </a>
+                    <label for="profile_img" class="rounded pic-update-lable">Change Profile Pic</label>
+                    <input id="profile_img" class="profile_img" type="file" name="image" onchange="previewFile(this);" required>
                 </div>
-            </div>
+                <img class="shadow border-lg" id="previewImg" style="height: 200px; width:200px; border-radius:100%;" src="{{ asset ('assets/img/default_user.png')}}" alt="Placeholder">
+                <div class="mt-5">
+                    <input class="pic-submit btn-secondary rounded shadow" id="pic-submit" type="submit" value="Save Picture">
+                </div>
+
+            </form>
+            @elseif($data->image != NULL)
+
+
+            <form action="{{ route('pic_update') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="middle">
+                    <label for="profile_img" class="rounded pic-update-lable">Change Profile Pic</label>
+                    <input id="profile_img" class="profile_img" type="file" name="image" onchange="previewFile(this);" required>
+                </div>
+                <img class="shadow border-lg" id="previewImg" style="height: 200px; width:200px; border-radius:100%;" src="{{url(asset ('Image/User_Image/'.$data->image))}}" alt="Profile Picture">
+                <div class="mt-5">
+                    <input class="pic-submit btn-secondary rounded shadow" id="pic-submit" type="submit" value="Save Picture">
+                </div> 
+            </form>
+
+            @endif
+        </div>
 
 
 
@@ -64,6 +84,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="row mb-5">
         <div class="col-lg-12">
             <a href="#form"><button class="addButton notification" type="button" id="formButton" role="button" >  
@@ -83,7 +104,7 @@
     <h4 class="text-center text-success">{{Session::get('message')}}</h4>
 @endif
 
-<form action="{{ route('admin_registration') }}" id="form" method="POST" class="rounded shadow mx-2 my-5" enctype="multipart/form-data">
+<form action="{{ route('admin_registration') }}" id="form" method="POST" class="rounded shadow mx-2 my-5 admin-form" enctype="multipart/form-data">
     @csrf
 
     <div class="row mb-3">
@@ -191,6 +212,24 @@
         });
     });
 </script>
+
+<script>
+    function previewFile(input) {
+        var file = $("input[type=file]").get(0).files[0];
+
+        if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function() {
+                $("#previewImg").attr("src", reader.result);
+            }
+
+            document.getElementById("pic-submit").style.display = "block";
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+
 
 
 @endsection
