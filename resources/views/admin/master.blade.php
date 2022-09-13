@@ -86,7 +86,7 @@
         <main class="px-0 py-0">
             <div class="container mx-0 px-0">
                 <div class="row">
-                    <div class="col-3 left-nav" style="height: 100vh;">
+                    <div class="col-3 left-nav">
 
                         <div class="row mt-2">
                             <div class="col"><a href="{{route('admin_profile')}}"><button class="addButton">Profile</button></a></div>
@@ -98,8 +98,7 @@
                             <div class="col"><a href="{{route('vendor_list')}}"><button class="addButton">Vendor</button></a></div>
                         </div>
 
-                        <!-- <div class="row mt-2"><div class="col"><a href="{{route('admin_product_list')}}"><button class="btn">Product</button></a></div></div>
-         -->
+                        <!-- <div class="row mt-2"><div class="col"><a href="{{route('admin_product_list')}}"><button class="btn">Product</button></a></div></div>         -->
 
 
                     </div>
@@ -112,7 +111,7 @@
     </div>
 
     <!-- Footer  -->
-    <div class="container-fluid border-top theme-bg mt-5">
+    <div class="border-top theme-bg">
         <footer class="px-4">
             <div class="d-flex justify-content-center  border-top">
                 <p class="text-center">&copy; 2022 Developed by CODETREE</p>
@@ -125,7 +124,6 @@
 
     <script src="{{asset('/')}}assets/js/jquery-3.6.1.min.js"></script>
     <script src="https://kit.fontawesome.com/ca76eb4afc.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{ asset ('assets/js/vendor/lightbox.min.js')}}"></script>
