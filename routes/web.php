@@ -60,4 +60,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/reset_pass', [App\Http\Controllers\HomeController::class, 'reset_pass'])->name('reset');
 Route::post('/update_pass', [App\Http\Controllers\HomeController::class, 'update_pass'])->name('update');
-
+Route::post('/profile_pic', [App\Http\Controllers\HomeController::class, 'pic_update'])->name('pic_update');

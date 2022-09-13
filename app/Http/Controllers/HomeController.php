@@ -72,8 +72,19 @@ class HomeController extends Controller
             
     }
 
-    public function login(){
-        return view('auth/login');
+    public function pic_update(Request $request){
+        $data = User::findOrFail(auth()->user()->id);
+
+        if($request->file('image')){
+            
+            $file= $request->file('image');
+            $filename= $file->getClientOriginalName().date('YmdHi');
+            $file-> move(public_path('/Image/User_Image'), $filename);
+            $data['image']= $filename;
+        };
+
+        $data ->update();
+        return redirect()->back();
     }
 
 }

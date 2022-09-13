@@ -30,3 +30,18 @@
 .profile_img:hover .middle {
     opacity: 2;
 }
+
+input[type="file"] {
+    display: none;
+}
+
+.pic-update-lable {
+    background-color: rgba(0, 0, 0, 0.373);
+    color: aliceblue;
+    transition: 2s;
+}
+
+.pic-submit {
+    display: none;
+    margin-left: 500px;
+}

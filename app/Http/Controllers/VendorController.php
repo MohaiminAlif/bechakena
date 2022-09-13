@@ -224,4 +224,7 @@ class VendorController extends Controller
     function pending_msg(){
         return view('Vendor/pending_page');
     }
+
+
 }
+

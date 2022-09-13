@@ -1,15 +1,36 @@
 @extends('layouts.app') @section('title') Dashboard @endsection @section('content')
 
-
 <div class="container">
-    <div class="row mb-5 mt-5 justify-content-center">
+    <div class="row mb-5 mt-2 justify-content-center">
         <div class="text-center profile_img">
-            <img class="shadow border-lg" style="height: 200px; width:200px; border-radius:100%;" src="{{ asset ('assets/img/default_user.png')}}">
-            <div class="middle">
-                <a href="">
-                    <div class="text-primary">Change Picture?</div>
-                </a>
-            </div>
+            @if($data->image == NULL)
+            <form action="{{ route('pic_update') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="middle">
+                    <label for="profile_img" class="rounded pic-update-lable">Change Profile Pic</label>
+                    <input id="profile_img" class="profile_img" type="file" name="image" onchange="previewFile(this);" required>
+                </div>
+                <img class="shadow border-lg" id="previewImg" style="height: 200px; width:200px; border-radius:100%;" src="{{ asset ('assets/img/default_user.png')}}" alt="Placeholder">
+                <div class="mt-5">
+                    <input class="pic-submit btn-secondary rounded shadow" id="pic-submit" type="submit" value="Save Picture">
+                </div> 
+            </form>
+            @elseif($data->image != NULL)
+
+
+            <form action="{{ route('pic_update') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="middle">
+                    <label for="profile_img" class="rounded pic-update-lable">Change Profile Pic</label>
+                    <input id="profile_img" class="profile_img" type="file" name="image" onchange="previewFile(this);" required>
+                </div>
+                <img class="shadow border-lg" id="previewImg" style="height: 200px; width:200px; border-radius:100%;" src="{{url(asset ('Image/User_Image/'.$data->image))}}" alt="Profile Picture">
+                <div class="mt-5">
+                    <input class="pic-submit btn-secondary rounded shadow" id="pic-submit" type="submit" value="Save Picture">
+                </div> 
+            </form>
+
+            @endif
         </div>
 
 
@@ -45,5 +66,24 @@
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+    function previewFile(input) {
+        var file = $("input[type=file]").get(0).files[0];
+
+        if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function() {
+                $("#previewImg").attr("src", reader.result);
+            }
+
+            document.getElementById("pic-submit").style.display = "block";
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 
 @endsection

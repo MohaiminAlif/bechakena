@@ -11,4 +11,6 @@ class UserController extends Controller
     {
         dd($category);
     }
+
+
 }
