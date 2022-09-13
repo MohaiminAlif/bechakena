@@ -38,8 +38,6 @@
 
 </div>
 
-
-
   <div class="row mb-5 justify-content-center">
       <img class="shadow rounded" style="height: 200px; width: 300px;" src="{{url(asset ('Image/Vendor_Documents/'.$vData->nid))}}" alt="">
     </div>

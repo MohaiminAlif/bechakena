@@ -1,66 +1,49 @@
-@extends('layouts.app') 
-@section('title') Dashboard @endsection 
-
-@section('content') 
-    @if(Session::has('message'))
-        <h4 class="text-center text-success">{{Session::get('message')}}</h4>
-    @endif
-
-    <div class="row">
-        <div class="col-md-8 offset-1">
-            <div>
-                <div>
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                </div>
+@extends('layouts.app') @section('title') Dashboard @endsection @section('content')
 
 
-                <div class="row">
-                    <div class="col-6">
-                        <div class="profile_img">
-                            <a href=""><img class="image" src="{{ asset ('assets/img/default_user.png')}}" alt=""></a>
-                            <div class="middle">
-                                <div class="text">Change Picture?</div>
-                            </div>
-                        </div>
-                    </div>
+<div class="container">
+    <div class="row mb-5 mt-5 justify-content-center">
+        <div class="text-center profile_img">
+            <img class="shadow border-lg" style="height: 200px; width:200px; border-radius:100%;" src="{{ asset ('assets/img/default_user.png')}}">
+            <div class="middle">
+                <a href="">
+                    <div class="text-primary">Change Picture?</div>
+                </a>
+            </div>
+        </div>
 
 
-                    <div class="col-6">
-                        <table class="table container table-borderless w-25 p-3">
 
-                            <tbody>
+        <div class="row mt-5 mb-5">
+            <div class="col-12">
+                <table class="table table-borderless w-25 p-3">
 
-                                <tr>
-                                    <th scope="row">Name:</th>
-                                    <td>{{$data->name}}</td>
+                    <tbody>
 
-                                </tr>
-                                <tr>
-                                    <th scope="row">Email:</th>
-                                    <td>{{$data->email}}</td>
+                        <tr>
+                            <th scope="row">Name:</th>
+                            <td>{{$data->name}}</td>
 
-                                </tr>
-                                <tr>
-                                    <th scope="row">Phone:</th>
-                                    <td>{{$data->phone}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Email:</th>
+                            <td>{{$data->email}}</td>
 
-                                </tr>
-                                <tr>
-                                    <th scope="row">Address:</th>
-                                    <td>{{$data->address}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                        </tr>
+                        <tr>
+                            <th scope="row">Phone:</th>
+                            <td>{{$data->phone}}</td>
 
+                        </tr>
+                        <tr>
+                            <th scope="row">Address:</th>
+                            <td>{{$data->address}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</div>
 
 @endsection

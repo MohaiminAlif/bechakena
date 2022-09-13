@@ -3,7 +3,13 @@
 
 @section('content')
 
-    <div class="container">
+
+<div class="container">
+<div class="row mb-5 mt-5 justify-content-center">
+    <div class="text-center">
+        <img class="shadow border-lg" style="height: 200px; width:200px; border-radius:100%;" src="{{url(asset ('Image/Vendor_Documents/'.$vdata->trade_licence))}}" alt="">
+    </div>
+    <div class="container mt-5 mb-3">
         <h2>{{$vdata->name}}</h2>
         <div class="row mt-3">
             <div class="col">

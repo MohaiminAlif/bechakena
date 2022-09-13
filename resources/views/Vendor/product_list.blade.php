@@ -80,14 +80,29 @@
             </div>
         </div>
     @elseif($product_list == [])
-        <div class="text-center border shadow p-3 rounded">
-            <h5 class="text-warning">No Product to show</h5>
+        <div class="border shadow p-3 mb-5 rounded">
+            <div class="text-center">
+                <h3 class="text-primary">Welcome {{ Auth::user()->name }}</h3>
+                <h4 class="text-secondary">You have not uploaded any product <br>
+                    To upload a new prodcut click on the "Inser Product"
+                </h4>
+            </div>
+            <div class="mt-5 -mb-5">
+                                
+                <h4>Rules:</h4>
+                <ol>
+                <h5><li>You must fill all the detials correctly</li>
+                <li>Select the correct category</li>
+                <li>Upload a clear image of the prodcut</li></h5>
+                </ol> 
+            </div>
+
         </div>
+
+
     @endif
 
     </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <!-- Modal -->
     <div class="modal fade" id="des" tabindex="-1" aria-labelledby="des" aria-hidden="true">
