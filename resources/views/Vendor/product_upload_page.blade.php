@@ -43,7 +43,7 @@
                     </div>
 
 
-                    <div class="row">
+                    <div class="row mt-5 mb-5">
                         <div class="col-3 mt-3 mb-3">
                             <input name="price" type="number" class="form-control" placeholder="Price" aria-label="price" required>
                         </div>

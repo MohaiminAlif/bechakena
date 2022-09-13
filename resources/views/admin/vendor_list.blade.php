@@ -11,14 +11,17 @@
 
         </div>
 
-
+        @if($count > 0)
 
         <div class="row mb-5">
-            <div class="col-lg-12"><a href="{{ route('vendor_pending_list') }}"><button class="addButton notification" role="button">  
+            <div class="col-lg-12"><a href="{{ route('vendor_pending_list') }}"><button class="pendingButton notification" role="button">  
                         <span>Vendor Pending</span>
-                        <span class="badge">{{$count}}</span>
+                        <span class="badge badge-light">{{$count}}</span>
                     </button></a></div>
         </div>
+        @endif
+
+
 
     </div>
 
