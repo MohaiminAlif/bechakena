@@ -7,9 +7,9 @@
 
         <div class="col-1"></div>
 
-        <div class="container-fluid px-0 mt-5 col-10">
+        <div class="container-fluid px-0 mt-5 col-10 mb-5">
 
-            <div class="main-part">
+            <div class="main-part mb-5">
                 <div class="row gx-5">
 
                     <div class="col-4">
@@ -31,21 +31,7 @@
                             
                             
                         </div>
-                        <div class="row">
-                            <h6>Color Family:</h6>
-
-                            <div class="xzoom-thumbs">
-                                <ul>
-                                    <button class="button" id="btn" onclick=color1();><img class="img-nav" src="{{ asset ('assets/img/black/black00.jpg')}}" alt=""></button>
-                                    <button class="button" id="btn" onclick=color2();><img class="img-nav" src="{{ asset ('assets/img/orange/orange00.jpg')}}" alt=""></button>
-                                    <button class="button" id="btn" onclick=color3();><img class="img-nav" src="{{ asset ('assets/img/white/white00.jpg')}}"></button>
-                                </ul>
-                            </div>
-                        </div>
-
-
-
-                    </div>
+                     </div>
 
                     <div class="col-3">
 

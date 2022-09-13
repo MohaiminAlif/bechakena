@@ -32,7 +32,7 @@
                                 <th>Price</th>
                                 <th>Category</th>
                                 <th>Description</th>
-                                <th>action</th>
+                                <th>Delete</th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
@@ -59,17 +59,15 @@
                                 <td>
                                     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#des">Description</button>
                                 </td>
-                                <td><button type="button" class="btn btn-outline-info">Edit</button></td>
-                                <td>
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                                </button>
+                                <td> 
+                                    <a href="{{ url('delete_product/'.$product->id) }}" class="btn btn-outline-danger btn-sm">Delete</a>
                                 </td>
+
                             </tr>
                             @empty
                             <tr>
                                 <td>
-                                    <h4 class="mt-2">Nothing is here!</h4>
+                                    <h4 class="mt-2">No product here!</h4>
                                 </td>
                             </tr>
                             @endforelse
@@ -104,15 +102,21 @@
 
     </section>
 
+    <div class="box"></div>
+
     <!-- Modal -->
     <div class="modal fade" id="des" tabindex="-1" aria-labelledby="des" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div style="color:aliceblue">
-                
+                <p>
+                    <?php
+                        echo "$product->description";
+                    ?>
+                </p>
             </div>
 
         </div>
-    </div>
+
 
 
 

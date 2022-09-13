@@ -1,6 +1,6 @@
 @extends('public_master') @section('public_title') Product Page @endsection @section('public_content')
 
-<div class="row container">
+<div class="row container product-body">
 
     <div class="col-2" style="margin-top:50px;">
 
@@ -66,12 +66,10 @@
 
 
             @empty
-            <tr>
-                <td>
-                    <h4 class="mt-2">Nothing is here!</h4>
-                </td>
-            </tr>
+            <div class="mt-5">
+                <h4 class="mt-2">No Such Product!</h4>
 
+            </div>
 
             @endforelse
 
@@ -79,4 +77,5 @@
         </section>
     </div>
 </div>
+<div class="box"></div>
 @endsection

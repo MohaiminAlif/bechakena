@@ -56,8 +56,11 @@
 
   </div>
 
-<div class="col-2">
+<!-- <div class="col-2">
     <a href="{{ url('delete_vendor/'.$vData->id) }}"><button class="deleteButton">Delete Vendor</button></a>
+</div> -->
+<div class="col-2">
+    <a href="{{ url('vendor_role_change/'.$vData->id) }}"><button class="deleteButton">Approve Vendor</button></a>
 </div>
 
 </div>

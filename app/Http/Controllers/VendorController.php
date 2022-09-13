@@ -225,6 +225,28 @@ class VendorController extends Controller
         return view('Vendor/pending_page');
     }
 
+    public function vendor_pic_update(Request $request){
+        $data = Vendors::findOrFail(auth()->user()->vID);
+
+
+        if($request->file('image')){
+            
+            $file= $request->file('image');
+            $filename= $file->getClientOriginalName().date('YmdHi');
+            $file-> move(public_path('/Image/Vendor_Documents'), $filename);
+            $data['company_image']= $filename;
+        };
+
+        $data ->update();
+        return redirect()->back();
+    }
+
+    public function delete_product($id){
+        $data = Products::findOrFail($id);
+        $data->delete();
+
+        return redirect()->back();
+    }
 
 }
 

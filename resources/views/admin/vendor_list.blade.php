@@ -2,11 +2,10 @@
 @section('admin_content')
 
     <link rel="stylesheet" href="{{ asset ('assets/css/list_style.css')}}">
-
     <div>
-        <div class="row my-2">
+        <div class="row my-5">
             <div class="text-center">
-                <h2 class="heading-section">Vendors</h2>
+                <h2 class="heading-section text-secondary">Vendors</h2>
             </div>
 
         </div>
@@ -26,6 +25,7 @@
     </div>
 
     <section>
+    @if($lists != [])
         <div class="row">
             <div class="col-md-12">
 
@@ -40,6 +40,7 @@
                                 <th>City</th>
                                 <th>Zip</th>
                                 <th>Details</th>
+                                <th>Delete</th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
@@ -66,6 +67,10 @@
                                 <td>
                                     <a href="{{ url('vendor_deatails/'.$list->id) }}" class="btn btn-warning btn-sm">Show more</a>
                                 </td>
+
+                                <td>
+                                    <a href="{{ url('delete_vendor_application/'.$list->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
                             </tr>
                             @endif @empty
                             <tr>
@@ -80,7 +85,33 @@
                 </div>
             </div>
         </div>
+        @elseif($lists == [])
+        <div class="border shadow p-3 mb-5 rounded">
+            <div class="text-center">
+                <h3 class="text-primary">Welcome {{ Auth::user()->name }}</h3>
+                <h4 class="text-secondary">You have not uploaded any product <br>
+                    To upload a new prodcut click on the "Inser Product"
+                </h4>
+            </div>
+            <div class="mt-5 -mb-5">
+                                
+                <h4>Rules:</h4>
+                <ol>
+                <h5><li>You must fill all the detials correctly</li>
+                <li>Select the correct category</li>
+                <li>Upload a clear image of the prodcut</li></h5>
+                </ol> 
+            </div>
+
+        </div>
+
+
+    @endif
+
     </section>
+    <div class="box">
+
+    </div>
 
 
 @endsection

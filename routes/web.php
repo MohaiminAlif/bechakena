@@ -22,6 +22,8 @@ Route::get('/preview_page','App\Http\Controllers\VendorController@preview')->nam
 Route::get('/pic_upload_page/{pID}','App\Http\Controllers\VendorController@pic_upload')->name('insert_pic')->middleware('check_vendor_role');
 Route::post('/insert_color', 'App\Http\Controllers\VendorController@insert_color')->name('insert_color')->middleware('check_vendor_role');
 Route::post('/insert_size', 'App\Http\Controllers\VendorController@insert_size')->name('insert_size')->middleware('check_vendor_role');
+Route::post('/vendor_profile_pic', [App\Http\Controllers\VendorController::class, 'vendor_pic_update'])->name('vendor_pic_update')->middleware('check_vendor_role');
+Route::get('/delete_product/{id}', [App\Http\Controllers\VendorController::class, 'delete_product'])->middleware('check_vendor_role');
 
 // vendor Contoller ends
 
@@ -39,6 +41,8 @@ Route::get('/vendor_role_change/{id}', 'App\Http\Controllers\adminController@rol
 Route::get('/delete_vendor/{id}', 'App\Http\Controllers\adminController@delete')->name('delete_vendor')->middleware('check_admin');
 Route::get('/vendor_deatails/{id}', 'App\Http\Controllers\adminController@single_vendor_details')->name('single_vendor_details')->middleware('check_admin');
 Route::get('/role_change_to_user/{id}', 'App\Http\Controllers\adminController@role_change_back')->name('vendor_role_change')->middleware('check_admin');
+
+
 
 //Admin Controllers Ends
 

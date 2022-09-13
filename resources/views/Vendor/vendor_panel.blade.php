@@ -6,28 +6,28 @@
 <div class="container">
         <div class="row mb-5 mt-4 justify-content-center">
             <div class="text-center profile_img">
-                @if($vdata->image == NULL)
-                <form action="{{ route('pic_update') }}" method="post" enctype="multipart/form-data">
+                @if($vdata->company_image == NULL)
+                <form action="{{ route('vendor_pic_update') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="middle">
                         <label for="profile_img" class="rounded pic-update-lable">Change Profile Pic</label>
-                        <input id="profile_img" class="profile_img" type="file" name="image" onchange="previewFile(this);" required>
+                        <input id="profile_img" class="profile_img input-profile" type="file" name="image" onchange="previewFile(this);" required>
                     </div>
                     <img class="shadow border-lg" id="previewImg" style="height: 200px; width:200px; border-radius:100%;" src="{{ asset ('assets/img/default_user.png')}}" alt="Placeholder">
                     <div class="mt-5">
                         <input class="pic-submit btn-secondary rounded shadow" id="pic-submit" type="submit" value="Save Picture">
                     </div> 
                 </form>
-                @elseif($vdata->image != NULL)
+                @elseif($vdata->company_image != NULL)
 
 
-                <form action="{{ route('pic_update') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('vendor_pic_update') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="middle">
                         <label for="profile_img" class="rounded pic-update-lable">Change Profile Pic</label>
-                        <input id="profile_img" class="profile_img" type="file" name="image" onchange="previewFile(this);" required>
+                        <input id="profile_img" class="profile_img input-profile" type="file" name="image" onchange="previewFile(this);" required>
                     </div>
-                    <img class="shadow border-lg" id="previewImg" style="height: 200px; width:200px; border-radius:100%;" src="{{url(asset ('Image/User_Image/'.$vdata->image))}}" alt="Profile Picture">
+                    <img class="shadow border-lg" id="previewImg" style="height: 200px; width:200px; border-radius:100%;" src="{{url(asset ('Image/Vendor_Documents/'.$vdata->company_image))}}" alt="Profile Picture">
                     <div class="mt-5">
                         <input class="pic-submit btn-secondary rounded shadow" id="pic-submit" type="submit" value="Save Picture">
                     </div> 
@@ -68,6 +68,26 @@
        
         
     </div>
+
+    
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+    function previewFile(input) {
+        var file = $("input[type=file]").get(0).files[0];
+
+        if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function() {
+                $("#previewImg").attr("src", reader.result);
+            }
+
+            document.getElementById("pic-submit").style.display = "block";
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 
             
 

@@ -2,11 +2,9 @@
 @section('admin_content')
 
 <link rel="stylesheet" href="{{ asset ('assets/css/list_style.css')}}">
-
-
-<div class="row my-2">
+<div class="row my-5">
     <div class="text-center">
-        <h2 class="heading-section">Pending List</h2>
+        <h2 class="heading-section text-secondary">Pending List</h2>
     </div>
 
 </div>
@@ -66,7 +64,7 @@
                             </td>
 
                             <td>
-                                <a href="{{ url('delete_vendor_application/'.$list->id) }}" class="btn btn-danger btn-sm">delete</a>
+                                <a href="{{ url('delete_vendor_application/'.$list->id) }}" class="btn btn-danger btn-sm" onclick="myFunction()">delete</a>
                             </td>
 
                         </tr>
@@ -85,7 +83,7 @@
     </div>
 </section>
 
-
+<div class="box"></div>
 
 
 @endsection

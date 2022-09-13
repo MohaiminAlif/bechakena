@@ -50,9 +50,6 @@
                         <button type="submit" class="btn btn-primary">Okay</button>
                     </div>
 
-                    <div class="col">
-                        <a href="#"><button class="btn btn-warning" type="button">Edit</button></a>
-                    </div>
                 </div>
             </form>
         </div>

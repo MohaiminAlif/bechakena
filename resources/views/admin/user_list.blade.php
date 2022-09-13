@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="{{ asset ('assets/css/list_style.css')}}">
 
     <div>
-        <div class="row my-2">
+        <div class="row my-5">
             <div class="text-center">
-                <h2 class="heading-section">Users</h2>
+                <h2 class="heading-section text-secondary">Users</h2>
             </div>
 
         </div>
@@ -79,6 +79,8 @@
             </div>
         </div>
     </section>
+
+    <div class="box"></div>
 
 
 @endsection
