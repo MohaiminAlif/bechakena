@@ -26,7 +26,7 @@
                 @csrf
                 <div class="middle">
                     <label for="profile_img" class="rounded pic-update-lable">Change Profile Pic</label>
-                    <input id="profile_img" class="profile_img" type="file" name="image" onchange="previewFile(this);" required>
+                    <input id="profile_img" class="profile_img input-profile" type="file" name="image" onchange="previewFile(this);" required>
                 </div>
                 <img class="shadow border-lg" id="previewImg" style="height: 200px; width:200px; border-radius:100%;" src="{{ asset ('assets/img/default_user.png')}}" alt="Placeholder">
                 <div class="mt-5">
@@ -41,7 +41,7 @@
                 @csrf
                 <div class="middle">
                     <label for="profile_img" class="rounded pic-update-lable">Change Profile Pic</label>
-                    <input id="profile_img" class="profile_img" type="file" name="image" onchange="previewFile(this);" required>
+                    <input id="profile_img" class="profile_img input-profile" type="file" name="image" onchange="previewFile(this);" required>
                 </div>
                 <img class="shadow border-lg" id="previewImg" style="height: 200px; width:200px; border-radius:100%;" src="{{url(asset ('Image/User_Image/'.$data->image))}}" alt="Profile Picture">
                 <div class="mt-5">
