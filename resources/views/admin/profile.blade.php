@@ -54,6 +54,8 @@
 
 
 
+
+
             <div class="row mt-5">
                 <div class="col-12">
                     <table class="table table-borderless w-25 p-3">
@@ -228,6 +230,8 @@
             reader.readAsDataURL(file);
         }
     }
+
+
 </script>
 
 
