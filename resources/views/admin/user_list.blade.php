@@ -80,7 +80,4 @@
         </div>
     </section>
 
-    <div class="box"></div>
-
-
 @endsection

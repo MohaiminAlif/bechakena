@@ -74,24 +74,16 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        <nav class="navbar navbar-light bg-white shadow-sm">
+            <div class="container mx-0">
+                <div class="col-1"> 
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></div>
                 <div class="col-2">
                     <a href="/" class="logo">
-
                         <img src="{{ asset ('assets/img/logov1.png')}}" alt="Bechakena Logo">
                     </a>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
+    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
@@ -146,8 +138,8 @@
                     </div>
 
                 <div class="d-flex mt-2">
-                    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-                    <div class="mx-5" style="margin-let:50px;"> @yield('admin_content')</div>
+                    
+                    <div class="mx-5"> @yield('admin_content')</div>
                 </div>
             </div>
     </div>

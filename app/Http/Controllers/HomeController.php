@@ -67,6 +67,7 @@ class HomeController extends Controller
             $data->password = Hash::make($request->password);
 
             $data->update();
+            dd($data);
             return view('/home', compact('data')); 
 
         };
